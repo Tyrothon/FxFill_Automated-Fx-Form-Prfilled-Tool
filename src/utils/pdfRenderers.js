@@ -224,17 +224,17 @@ export const renderBocRemittanceForm = (doc, page, margin, data) => {
   doc.setFontSize(defaultFontSize);
   y = ensureSpace(20, y);
   doc.text('Remittance Currency', left + 15, y);
-  doc.line(left + 75, y + 2, right - 300, y + 2);
-  if (data?.remittanceCurrency) doc.text(toAscii(data.remittanceCurrency), left + 80, y - 2);
+  doc.line(left + 125, y + 2, right - 300, y + 2);
+  if (data?.remittanceCurrency) doc.text(toAscii(data.remittanceCurrency), left + 130, y);
   doc.text('Name', right - 290, y);
   doc.line(right - 260, y + 2, right - 140, y + 2);
-  if (data?.currencyName) doc.text(toAscii(data.currencyName), right - 255, y - 2);
+  if (data?.currencyName) doc.text(toAscii(data.currencyName), right - 255, y);
 
   y += 18;
-  y = drawLineField('Amount (Remittance Currency)', y, left + 15, left + 95, right - 240, data?.amount, 5);
+  y = drawLineField('Amount (Remittance Currency)', y, left + 15, left + 165, right - 240, data?.amount, 5);
   doc.text('Debit Amount', right - 230, y - baseGap);
   doc.line(right - 150, (y - baseGap) + 2, right - 15, (y - baseGap) + 2);
-  if (data?.debitAmount) doc.text(toAscii(data.debitAmount), right - 145, (y - baseGap) - 2);
+  if (data?.debitAmount) doc.text(toAscii(data.debitAmount), right - 145, y - baseGap);
 
   // Applicant / Accounts
   y += 8;
